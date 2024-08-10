@@ -1,0 +1,27 @@
+import java.nio.charset.StandardCharsets
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply from: "${project.rootDir}/config/common/jacoco.gradle"
+
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+compileJava {
+    options.encoding = StandardCharsets.UTF_8
+}
+
+compileTestJava {
+    options.encoding = StandardCharsets.UTF_8
+}
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, "seconds"
+}
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}

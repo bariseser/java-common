@@ -1,0 +1,23 @@
+apply from: "${project.rootDir}/config/common/java-module.gradle"
+apply plugin: "java-library"
+apply from: "${project.rootDir}/config/common/publish.gradle"
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifactId = "common-$project.name"
+        }
+    }
+}
+
+dependencies {
+    api libs.commons.math3
+    implementation libs.guava
+}
+
+// Apply a specific Java toolchain to ease working on different environments.
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}

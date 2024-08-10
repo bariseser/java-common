@@ -1,0 +1,7 @@
+group "com.bariseser"
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
