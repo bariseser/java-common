@@ -15,8 +15,8 @@ publishing {
             name = "GitHubPackages"
             url = "https://maven.pkg.github.com/bariseser/java-common"
             credentials {
-                username = "bariseser"
-                password = "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"
+                username = 'bariseser'
+                password = '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'
             }
         }
     }
